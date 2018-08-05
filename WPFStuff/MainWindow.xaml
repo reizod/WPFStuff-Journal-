@@ -5,8 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFStuff"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Name="MainWin"
+        Title="Introduction to Computer Science" FontSize="20" Height="830" Width="800" Closing="MainWin_Closing">
+    <StackPanel Orientation="Vertical">
+        <Label Content="{Binding ElementName=MainWin, Path=StudentName}" MinHeight="50" VerticalContentAlignment="Bottom" Padding="5,0">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform Angle="270" CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="Bisque" Offset="1"/>
+                    <GradientStop Color="White"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+        <StackPanel Orientation="Horizontal" Height="40">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform Angle="270" CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="Bisque" Offset="1"/>
+                    <GradientStop Color="White"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <Label Content="{Binding ElementName=MainWin, Path=DateToday}" MinHeight="40" VerticalContentAlignment="Top" Padding="15,0,5,0" HorizontalAlignment="Stretch" FontSize="18" Width="500"/>
+            <Button Name="OkButton" Content="Ok" Width="100" Margin="3" HorizontalAlignment="Right" TabIndex="3" Click="Button_Click" GotFocus="Button_GotFocus" />
+        </StackPanel>
+        <Label Content="Today I Learned ..." Height="40" VerticalContentAlignment="Bottom" Background="Bisque" FontSize="16" FontFamily="Calibri"/>
+        <TextBox Name="ILearned" TextWrapping="Wrap" Text=""  FontSize="14" FontFamily="Consolas" MinHeight="40" Padding="5" AcceptsReturn="True" AutoWordSelection="True" TabIndex="0" Background="LightGray" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" TextChanged="Journal_TextChanged"/>
+        <Label Content="I liked ..." Height="40" VerticalContentAlignment="Bottom" Background="Bisque" FontSize="16" FontFamily="Calibri"/>
+        <TextBox Name="ILiked" TextWrapping="Wrap" Text=""  FontSize="14" FontFamily="Consolas" MinHeight="40" Padding="5" AcceptsReturn="True" AutoWordSelection="True" TabIndex="1" Background="LightGray" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" TextChanged="Journal_TextChanged"/>
+        <Label Content="I didn't like ..." Height="40" VerticalContentAlignment="Bottom" Background="Bisque" FontSize="16" FontFamily="Calibri"/>
+        <TextBox Name="IDisliked" TextWrapping="Wrap" Text=""  FontSize="14" FontFamily="Consolas" MinHeight="40" Padding="5" AcceptsReturn="True" AutoWordSelection="True" TabIndex="2" Background="LightGray" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" TextChanged="Journal_TextChanged"/>
+    </StackPanel>
 </Window>
